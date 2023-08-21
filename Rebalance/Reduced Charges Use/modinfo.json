@@ -1,0 +1,11 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "reduced_cooking_charges_use",
+    "name": "Reduced Cooking Charges Use",
+    "authors": [ "Atomic Fox" ],
+    "description": "Reduces amount of charges used by cooking tools in recipes away from realism, bringing them close to pre-overhaul values and allowing to cook more food with the same amount of fuel or electrical power.",
+    "category": "rebalance",
+    "dependencies": [ "dda" ]
+  }
+]

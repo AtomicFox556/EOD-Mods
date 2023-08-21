@@ -1,0 +1,33 @@
+[
+  {
+    "id": "empty_component",
+    "type": "requirement",
+    "//": "Just an empty requirement. Need to do it like that because otherwise the components value of a requirement wouldn't override that of the old requirement.",
+    "components": [  ]
+  },
+  {
+    "id": "welding_standard",
+    "type": "requirement",
+    "components": [ [ [ "empty_component", 1, "LIST" ] ] ]
+  },
+  {
+    "id": "welding_alloys",
+    "type": "requirement",
+    "components": [ [ [ "empty_component", 1, "LIST" ] ] ]
+  },
+  {
+    "id": "repair_welding_standard",
+    "type": "requirement",
+    "components": [ [ [ "steel_tiny", 1, "LIST" ] ] ]
+  },
+  {
+    "id": "repair_welding_alloys",
+    "type": "requirement",
+    "components": [ [ [ "material_aluminium_ingot", 1 ] ] ]
+  },
+  {
+    "id": "repair_welding_rebar",
+    "type": "requirement",
+    "components": [ [ [ "rebar", 1 ] ] ]
+  }
+]

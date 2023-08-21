@@ -1,0 +1,11 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "no_welding_rods",
+    "name": "No Welding Rods",
+    "authors": [ "Atomic Fox" ],
+    "description": "Removes the need to have welding rods to do any welding (making it so that welding only needs electricity or fuel), changing the game away from realism and restoring the way welding used to work in older versions of Cataclysm.",
+    "category": "rebalance",
+    "dependencies": [ "dda" ]
+  }
+]

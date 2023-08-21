@@ -1,0 +1,64 @@
+[
+  {
+    "id": "surface_heat",
+    "type": "requirement",
+    "//": "Arbitrarily lowered unrealistic energy costs for balance purposes here; 25x lower than default for induction hotplate, microwave and oven, 17.5x lower for hotplate and multicooker, 4x lower for charcoal smoker and charcoal cooker, 3x lower for alcohol stove, 2x lower for hexamine stove, oil cooker, gasoline cooker and propane cooker, unchanged for acetylene cooker, bringing energy needed close to what it was like before power costs were overhauled.",
+    "tools": [
+      [
+        [ "hotplate_induction", 1 ],
+        [ "microwave", 1 ],
+        [ "hotplate", 2 ],
+        [ "magnetic_stirrer", 2 ],
+        [ "multi_cooker", 2 ],
+        [ "char_smoker", 1 ],
+        [ "charcoal_cooker", 1 ],
+        [ "oven", 5 ],
+        [ "esbit_stove", 1 ],
+        [ "oil_cooker", 1 ],
+        [ "gasoline_cooker", 1 ],
+        [ "propane_cooker", 1 ],
+        [ "acetylene_cooker", 1 ],
+        [ "popcan_stove", 1 ],
+        [ "fire", -1 ]
+      ]
+    ]
+  },
+  {
+    "id": "smoking_heat",
+    "type": "requirement",
+    "//": "Arbitrarily lowered unrealistic energy costs for balance purposes here; 6x lower than default, bringing energy needed close to what it was like before power costs were overhauled.",
+    "tools": [ [ [ "char_smoker", 1 ] ] ]
+  },
+  {
+    "id": "dehydrating_heat",
+    "type": "requirement",
+    "//": "Arbitrarily lowered unrealistic energy costs for balance purposes here; 66x lower than default for electric dehydrator, and 12x lower than default for charcoal smoker, bringing energy needed close to what it was like before power costs were overhauled.",
+    "tools": [ [ [ "dehydrator", 1 ], [ "char_smoker", 1 ] ] ]
+  },
+  {
+    "id": "water_boiling_heat",
+    "type": "requirement",
+    "//": "Arbitrarily lowered unrealistic energy costs for balance purposes here; ~66x lower than default for hotplate and multicooker, 62.5x lower for microwave, oven, coffeemaker, induction hotplate, 57.5x lower for atomic coffeemaker, 30x lower for charcoal smoker and charcoal cooker, 20x lower for alcohol stove, 16x lower for propane cooker, 13x lower for hexamine stove, 12x lower for gasoline cooker and oil cooker, and 8x lower for acetylene cooker, bringing energy needed close to what it was like before power costs were overhauled.",
+    "tools": [
+      [
+        [ "coffeemaker", 2 ],
+        [ "hotplate_induction", 2 ],
+        [ "hotplate", 3 ],
+        [ "magnetic_stirrer", 3 ],
+        [ "microwave", 4 ],
+        [ "oven", 16 ],
+        [ "multi_cooker", 3 ],
+        [ "char_smoker", 1 ],
+        [ "charcoal_cooker", 1 ],
+        [ "esbit_stove", 1 ],
+        [ "oil_cooker", 1 ],
+        [ "gasoline_cooker", 1 ],
+        [ "propane_cooker", 1 ],
+        [ "acetylene_cooker", 1 ],
+        [ "popcan_stove", 1 ],
+        [ "atomic_coffeepot", 2 ],
+        [ "fire", -1 ]
+      ]
+    ]
+  }
+]
