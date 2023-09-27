@@ -1,0 +1,527 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "OH_NO_MY_HOUSE",
+    "name": "OH NO MY HOUSE",
+    "authors": [ "Kenshut" ],
+    "description": "Вы чуствуете себя богом этого мира? Тогда наша корпорация №@$#, готова предоставить вам особые услуги, и за определённую ценну мы переместим модифицированный блоб в ваше измерение. Вы согласны?",
+    "category": "rebalance",
+	"version": "Alpha 1.2",
+    "dependencies": [ "dda" ]
+  },
+  {
+    "type": "monstergroup",
+    "name": "обычная_группа",
+    "monsters": [
+
+      { "monster": "mon_zombie_ks", "weight": 10, "cost_multiplier": 7, "pack_size": [ 20, 30 ] },
+	  { "monster": "mon_zombie", "weight": 250 },
+      { "monster": "mon_zombie_fat", "weight": 750, "cost_multiplier": 2, "pack_size": [ 20, 30 ] },
+      { "monster": "mon_zombie_tough", "weight": 750, "cost_multiplier": 3, "pack_size": [ 20, 30 ] },
+      { "monster": "mon_zombie_child", "weight": 750, "pack_size": [ 20, 30 ] },
+      { "monster": "mon_zombie_rot", "weight": 500, "cost_multiplier": 3, "pack_size": [ 20, 30 ] },
+      { "monster": "mon_zombie_crawler", "weight": 250, "cost_multiplier": 3, "pack_size": [ 20, 30 ] },
+      { "monster": "mon_zombie_dog", "weight": 200, "cost_multiplier": 2, "pack_size": [ 20, 30 ] },
+      { "monster": "mon_zombie_dog", "weight": 10, "cost_multiplier": 4, "pack_size": [ 20, 30 ] },
+      { "monster": "mon_dog_zombie_cop", "weight": 50, "cost_multiplier": 4, "pack_size": [ 20, 30 ] },
+      { "monster": "mon_dog_zombie_rot", "weight": 50, "cost_multiplier": 5, "pack_size": [ 20, 30 ] },
+      { "monster": "mon_zombie_soldier", "weight": 100, "cost_multiplier": 2, "pack_size": [ 20, 30 ] },
+      { "monster": "mon_zombie_cop", "weight": 200, "cost_multiplier": 3, "pack_size": [ 20, 30 ] },
+      { "monster": "mon_zombie_fursuit", "weight": 1, "cost_multiplier": 3, "pack_size": [ 20, 30 ] },
+      { "monster": "mon_zombie_swat", "weight": 100, "cost_multiplier": 3, "pack_size": [ 20, 30 ] },
+      { "monster": "mon_zombie_medical", "weight": 100, "cost_multiplier": 2, "pack_size": [ 20, 30 ] },
+      { "monster": "mon_zombie_hazmat", "weight": 100, "cost_multiplier": 3, "pack_size": [ 20, 30 ] },
+      { "monster": "mon_zombie_fireman", "weight": 100, "cost_multiplier": 2, "pack_size": [ 20, 30 ] },
+      { "monster": "mon_zombie_swimmer_base", "weight": 100, "cost_multiplier": 5, "pack_size": [ 20, 30 ] },
+      { "monster": "mon_zombie_static", "weight": 100, "cost_multiplier": 5, "pack_size": [ 20, 30 ] },
+      { "monster": "mon_zombie_paramilitary", "weight": 10, "cost_multiplier": 25, "pack_size": [ 20, 30 ] },
+      { "monster": "mon_zombie_survivor", "weight": 10, "cost_multiplier": 25, "pack_size": [ 20, 30 ] },
+      { "monster": "mon_zombie_survivor_elite", "weight": 10, "cost_multiplier": 25, "pack_size": [ 20, 30 ] },
+      { "monster": "mon_beekeeper", "weight": 10, "cost_multiplier": 5, "pack_size": [ 20, 30 ] },
+      { "monster": "mon_zombie_technician", "weight": 10, "cost_multiplier": 12, "pack_size": [ 20, 30 ] },
+      { "monster": "mon_zombie_runner", "weight": 200, "cost_multiplier": 5, "pack_size": [ 20, 30 ] },
+      { "group": "GROUP_FERAL", "weight": 121, "pack_size": [ 20, 30 ] },
+      { "monster": "mon_feral_soldier", "weight": 10, "cost_multiplier": 5, "pack_size": [ 20, 30 ] },
+      { "monster": "mon_zombie_brainless", "weight": 650, "pack_size": [ 20, 30 ] }
+    ]
+  },
+  {
+    "name": "необычная_группа",
+    "type": "monstergroup",
+    "monsters": [
+      { "monster": "mon_zombie", "weight": 250 },
+	  { "monster": "mon_zombie_ks", "weight": 250 },
+      { "monster": "mon_zombie_fat", "weight": 250 },
+      { "monster": "mon_zombie_tough", "weight": 400 },
+      { "monster": "mon_zombie_brute", "weight": 80,  "cost_multiplier": 2 },
+      { "monster": "mon_zombie_hulk", "weight": 50, "cost_multiplier": 3 },
+      { "monster": "mon_zombie_runner", "weight": 350 },
+      { "monster": "mon_feral_human_pipe", "weight": 60 },
+      { "monster": "mon_feral_human_crowbar", "weight": 30 },
+      { "monster": "mon_feral_human_axe", "weight": 5, "cost_multiplier": 2 }
+    ]
+  },
+  {
+   "id": "mon_zombie_ks",
+   "type": "MONSTER",
+   "copy-from": "mon_zombie",
+   "flags": [
+      "SEES",
+      "HEARS",
+	  "ALL_SEEING",
+      "STUMBLES",
+      "WARM",
+      "GRABS",
+      "BASHES",
+      "GROUP_BASH",
+      "POISON",
+      "NO_BREATHE",
+      "REVIVES",
+      "PUSH_MON",
+      "FILTHY"
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "считаем_убийства",
+    "eoc_type": "EVENT",
+    "required_event": "character_kills_monster",
+    "effect": [ { "math": [ "сложность", "+=", "0.1" ] } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "запуск",
+    "eoc_type": "EVENT",
+    "required_event": "game_start",
+	"condition": { "math": [ "5", ">", "сложность" ] },
+    "effect": [
+	{ "arithmetic": [ { "global_val": "var", "var_name": "сложность" }, "=", { "const": 10 } ] },
+	{ "open_dialogue": { "topic": "начало" } }
+	] 
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "стандарт",
+    "effect": [
+	{ "u_add_trait": "Меченый"}
+	] 
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "Усложненный",
+    "effect": [
+	{ "u_add_trait": "Меченый_сложный"}
+	] 
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "Упрощенный",
+    "effect": [
+	{ "u_add_trait": "Меченый_простой"}
+	] 
+  },
+  {
+    "type": "talk_topic",
+    "id": "начало",
+    "dynamic_line": "корпорация №@$# приветствует вас, какие именно характеристики вы хотите иметь у модифицированного блоба?",
+    "responses": [
+      { "text": "Стандартный пакет", "topic": "описание1" },
+	  { "text": "Усложненный пакет", "topic": "описание2" },
+	  { "text": "Упрощенный пакет", "topic": "описание3" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "описание1",
+    "dynamic_line": "Стандартный пакет\n\nКаждые семь дней на вас будут нападать орды, за каждую волну +10 к сложности\n\nПосле заключения контракта не забудьте его активиравать!\n\nклавиша'['",
+    "responses": [
+      {
+        "text": "Согласен",
+        "effect": [ { "run_eocs": "стандарт" } ],
+        "topic": "TALK_DONE"
+      },
+      {
+        "text": "Нужно еще подумать",
+        "topic": "начало"
+      }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "описание2",
+    "dynamic_line": "Усложненный пакет\n\nКаждые 3 дня на вас будут нападать орды, за каждую волну +20 к сложности\n\nПосле заключения контракта не забудьте его активиравать!\n\nклавиша'['",
+    "responses": [
+      {
+        "text": "Согласен",
+        "effect": [ { "run_eocs": "сложный" } ],
+        "topic": "TALK_DONE"
+      },
+      {
+        "text": "Нужно еще подумать",
+        "topic": "начало"
+      }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "описание3",
+    "dynamic_line": "Упрощенный пакет\n\nКаждые 14 дня на вас будут нападать орды, за каждую волну +5 к сложности\n\nПосле заключения контракта не забудьте его активиравать!\n\nклавиша'['",
+    "responses": [
+      {
+        "text": "Согласен",
+        "effect": [ { "run_eocs": "простой" } ],
+        "topic": "TALK_DONE"
+      },
+      {
+        "text": "Нужно еще подумать",
+        "topic": "начало"
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "настройка",
+     "effect": [ { "open_dialogue": { "topic": "начало" } } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "спавн_1_группы",
+    "effect": [
+	{
+        "u_spawn_monster": "необычная_группа",
+        "real_count": {"arithmetic":[ {"arithmetic": [ { "global_val": "var", "var_name": "сложность" }, "/", { "const": 10 } ]}, "-",{ "const": 10 } ] },
+        "min_radius": 35,
+        "max_radius": 50,
+		"outdoor_only": true,
+		"group": true
+      },
+      {
+        "u_spawn_monster": "обычная_группа",
+        "real_count": { "arithmetic": [ { "global_val": "var", "var_name": "сложность" }, "/", { "const": 10 } ] },
+        "min_radius": 35,
+        "max_radius": 50,
+		"outdoor_only": true,
+		"group": true,
+		"spawn_message": "Пришло время умирать."
+      },
+	  {
+        "u_spawn_monster": "обычная_группа",
+        "real_count": { "arithmetic": [ { "global_val": "var", "var_name": "сложность" }, "/", { "const": 10 } ] },
+        "min_radius": 35,
+        "max_radius": 50,
+		"outdoor_only": true,
+		"group": true
+      },
+	  {
+        "u_spawn_monster": "обычная_группа",
+        "real_count": { "arithmetic": [ { "global_val": "var", "var_name": "сложность" }, "/", { "const": 10 } ] },
+        "min_radius": 35,
+        "max_radius": 50,
+		"outdoor_only": true,
+		"group": true
+      },
+	  {
+        "u_spawn_monster": "обычная_группа",
+        "real_count": { "arithmetic": [ { "global_val": "var", "var_name": "сложность" }, "/", { "const": 10 } ] },
+        "min_radius": 35,
+        "max_radius": 50,
+		"outdoor_only": true,
+		"group": true
+      },
+	  {
+        "u_spawn_monster": "обычная_группа",
+        "real_count": { "arithmetic": [ { "global_val": "var", "var_name": "сложность" }, "/", { "const": 10 } ] },
+        "min_radius": 35,
+        "max_radius": 50,
+		"outdoor_only": true,
+		"group": true
+      },
+	  {
+        "u_spawn_monster": "обычная_группа",
+        "real_count": { "arithmetic": [ { "global_val": "var", "var_name": "сложность" }, "/", { "const": 10 } ] },
+        "min_radius": 35,
+        "max_radius": 50,
+		"outdoor_only": true,
+		"group": true
+      },
+	  {
+        "u_spawn_monster": "обычная_группа",
+        "real_count": { "arithmetic": [ { "global_val": "var", "var_name": "сложность" }, "/", { "const": 10 } ] },
+        "min_radius": 35,
+        "max_radius": 50,
+		"outdoor_only": true,
+		"group": true
+      },
+	  {
+        "u_spawn_monster": "обычная_группа",
+        "real_count": { "arithmetic": [ { "global_val": "var", "var_name": "сложность" }, "/", { "const": 10 } ] },
+        "min_radius": 35,
+        "max_radius": 50,
+		"outdoor_only": true,
+		"group": true
+      },
+	  {
+        "u_spawn_monster": "обычная_группа",
+        "real_count": { "arithmetic": [ { "global_val": "var", "var_name": "сложность" }, "/", { "const": 10 } ] },
+        "min_radius": 35,
+        "max_radius": 50,
+		"outdoor_only": true,
+		"group": true
+      },
+	  {
+        "u_spawn_monster": "обычная_группа",
+        "real_count": { "arithmetic": [ { "global_val": "var", "var_name": "сложность" }, "/", { "const": 10 } ] },
+        "min_radius": 35,
+        "max_radius": 50,
+		"outdoor_only": true,
+		"group": true
+      },
+	  { "math": [ "сложность", "+=", "10" ] }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "спавн_1_группы_сложный",
+    "effect": [
+      {
+        "u_spawn_monster": "обычная_группа",
+        "real_count": { "arithmetic": [ { "global_val": "var", "var_name": "сложность" }, "/", { "const": 10 } ] },
+        "min_radius": 35,
+        "max_radius": 50,
+		"outdoor_only": true,
+		"group": true,
+		"spawn_message": "Пришло время умирать."
+      },
+	  {
+        "u_spawn_monster": "необычная_группа",
+        "real_count": {"arithmetic":[ {"arithmetic": [ { "global_val": "var", "var_name": "сложность" }, "/", { "const": 10 } ]}, "-",{ "const": 10 } ] },
+        "min_radius": 35,
+        "max_radius": 50,
+		"outdoor_only": true,
+		"group": true
+      },
+	  {
+        "u_spawn_monster": "обычная_группа",
+        "real_count": { "arithmetic": [ { "global_val": "var", "var_name": "сложность" }, "/", { "const": 10 } ] },
+        "min_radius": 35,
+        "max_radius": 50,
+		"outdoor_only": true,
+		"group": true
+      },
+	  {
+        "u_spawn_monster": "обычная_группа",
+        "real_count": { "arithmetic": [ { "global_val": "var", "var_name": "сложность" }, "/", { "const": 10 } ] },
+        "min_radius": 35,
+        "max_radius": 50,
+		"outdoor_only": true,
+		"group": true
+      },
+	  {
+        "u_spawn_monster": "обычная_группа",
+        "real_count": { "arithmetic": [ { "global_val": "var", "var_name": "сложность" }, "/", { "const": 10 } ] },
+        "min_radius": 35,
+        "max_radius": 50,
+		"outdoor_only": true,
+		"group": true
+      },
+	  {
+        "u_spawn_monster": "обычная_группа",
+        "real_count": { "arithmetic": [ { "global_val": "var", "var_name": "сложность" }, "/", { "const": 10 } ] },
+        "min_radius": 35,
+        "max_radius": 50,
+		"outdoor_only": true,
+		"group": true
+      },
+	  {
+        "u_spawn_monster": "обычная_группа",
+        "real_count": { "arithmetic": [ { "global_val": "var", "var_name": "сложность" }, "/", { "const": 10 } ] },
+        "min_radius": 35,
+        "max_radius": 50,
+		"outdoor_only": true,
+		"group": true
+      },
+	  {
+        "u_spawn_monster": "обычная_группа",
+        "real_count": { "arithmetic": [ { "global_val": "var", "var_name": "сложность" }, "/", { "const": 10 } ] },
+        "min_radius": 35,
+        "max_radius": 50,
+		"outdoor_only": true,
+		"group": true
+      },
+	  {
+        "u_spawn_monster": "обычная_группа",
+        "real_count": { "arithmetic": [ { "global_val": "var", "var_name": "сложность" }, "/", { "const": 10 } ] },
+        "min_radius": 35,
+        "max_radius": 50,
+		"outdoor_only": true,
+		"group": true
+      },
+	  {
+        "u_spawn_monster": "обычная_группа",
+        "real_count": { "arithmetic": [ { "global_val": "var", "var_name": "сложность" }, "/", { "const": 10 } ] },
+        "min_radius": 35,
+        "max_radius": 50,
+		"outdoor_only": true,
+		"group": true
+      },
+	  {
+        "u_spawn_monster": "обычная_группа",
+        "real_count": { "arithmetic": [ { "global_val": "var", "var_name": "сложность" }, "/", { "const": 10 } ] },
+        "min_radius": 35,
+        "max_radius": 50,
+		"outdoor_only": true,
+		"group": true
+      },
+	  { "math": [ "сложность", "+=", "20" ] }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "спавн_1_группы_легкий",
+    "effect": [
+      {
+        "u_spawn_monster": "обычная_группа",
+        "real_count": { "arithmetic": [ { "global_val": "var", "var_name": "сложность" }, "/", { "const": 10 } ] },
+        "min_radius": 35,
+        "max_radius": 50,
+		"outdoor_only": true,
+		"group": true,
+		"spawn_message": "Пришло время умирать."
+      },
+	  {
+        "u_spawn_monster": "необычная_группа",
+        "real_count": {"arithmetic":[ {"arithmetic": [ { "global_val": "var", "var_name": "сложность" }, "/", { "const": 10 } ]}, "-",{ "const": 10 } ] },
+        "min_radius": 35,
+        "max_radius": 50,
+		"outdoor_only": true,
+		"group": true
+      },
+	  {
+        "u_spawn_monster": "обычная_группа",
+        "real_count": { "arithmetic": [ { "global_val": "var", "var_name": "сложность" }, "/", { "const": 10 } ] },
+        "min_radius": 35,
+        "max_radius": 50,
+		"outdoor_only": true,
+		"group": true
+      },
+	  {
+        "u_spawn_monster": "обычная_группа",
+        "real_count": { "arithmetic": [ { "global_val": "var", "var_name": "сложность" }, "/", { "const": 10 } ] },
+        "min_radius": 35,
+        "max_radius": 50,
+		"outdoor_only": true,
+		"group": true
+      },
+	  {
+        "u_spawn_monster": "обычная_группа",
+        "real_count": { "arithmetic": [ { "global_val": "var", "var_name": "сложность" }, "/", { "const": 10 } ] },
+        "min_radius": 35,
+        "max_radius": 50,
+		"outdoor_only": true,
+		"group": true
+      },
+	  {
+        "u_spawn_monster": "обычная_группа",
+        "real_count": { "arithmetic": [ { "global_val": "var", "var_name": "сложность" }, "/", { "const": 10 } ] },
+        "min_radius": 35,
+        "max_radius": 50,
+		"outdoor_only": true,
+		"group": true
+      },
+	  {
+        "u_spawn_monster": "обычная_группа",
+        "real_count": { "arithmetic": [ { "global_val": "var", "var_name": "сложность" }, "/", { "const": 10 } ] },
+        "min_radius": 35,
+        "max_radius": 50,
+		"outdoor_only": true,
+		"group": true
+      },
+	  {
+        "u_spawn_monster": "обычная_группа",
+        "real_count": { "arithmetic": [ { "global_val": "var", "var_name": "сложность" }, "/", { "const": 10 } ] },
+        "min_radius": 35,
+        "max_radius": 50,
+		"outdoor_only": true,
+		"group": true
+      },
+	  {
+        "u_spawn_monster": "обычная_группа",
+        "real_count": { "arithmetic": [ { "global_val": "var", "var_name": "сложность" }, "/", { "const": 10 } ] },
+        "min_radius": 35,
+        "max_radius": 50,
+		"outdoor_only": true,
+		"group": true
+      },
+	  {
+        "u_spawn_monster": "обычная_группа",
+        "real_count": { "arithmetic": [ { "global_val": "var", "var_name": "сложность" }, "/", { "const": 10 } ] },
+        "min_radius": 35,
+        "max_radius": 50,
+		"outdoor_only": true,
+		"group": true
+      },
+	  {
+        "u_spawn_monster": "обычная_группа",
+        "real_count": { "arithmetic": [ { "global_val": "var", "var_name": "сложность" }, "/", { "const": 10 } ] },
+        "min_radius": 35,
+        "max_radius": 50,
+		"outdoor_only": true,
+		"group": true
+      },
+	  { "math": [ "сложность", "+=", "5" ] }
+    ]
+  },
+  {
+    "type": "mutation",
+    "id": "Меченый",
+    "name": { "str": "Меченый" },
+    "points": 0,
+    "description": "Вы заключили ту сделку и почувствовали как неизвестная энергия вливается в ваше тело.",
+    "active": true,
+    "activated_is_setup": true,
+	"activated_eocs": [ "вкл" ],
+    "processed_eocs": [ "спавн_1_группы" ],
+    "time": "7 m"
+  },
+  {
+    "type": "mutation",
+    "id": "Меченый_test",
+    "name": { "str": "Меченый" },
+    "points": 0,
+    "description": "Вы заключили ту сделку и почувствовали как неизвестная энергия вливается в ваше тело.",
+    "active": true,
+    "activated_is_setup": true,
+	"activated_eocs": [ "вкл" ],
+    "processed_eocs": [ "спавн_1_группы" ],
+    "time": "1 m"
+  },
+  {
+    "type": "mutation",
+    "id": "Меченый_сложный",
+    "name": { "str": "Меченый" },
+    "points": 0,
+    "description": "Вы заключили ту сделку и почувствовали как неизвестная энергия вливается в ваше тело.",
+    "active": true,
+    "activated_is_setup": true,
+	"activated_eocs": [ "вкл" ],
+    "processed_eocs": [ "спавн_1_группы_сложный" ],
+    "time": "3 d"
+  },
+  {
+    "type": "mutation",
+    "id": "Меченый_простой",
+    "name": { "str": "Меченый" },
+    "points": 0,
+    "description": "Вы заключили ту сделку и почувствовали как неизвестная энергия вливается в ваше тело.",
+    "active": true,
+    "activated_is_setup": true,
+	"activated_eocs": [ "вкл" ],
+    "processed_eocs": [ "спавн_1_группы_легкий" ],
+    "time": "14 d"
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "вкл",
+    "effect": [ { "u_message": "Вы заключили ту сделку и почувствовали как неизвестная энергия вливается в ваше тело" } ]
+  }
+]
