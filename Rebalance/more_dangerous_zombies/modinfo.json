@@ -1,0 +1,26 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "Более_опасные_зомби",
+    "name": "Более опасные зомби",
+    "authors": [ "Kenshut" ],
+    "description": "Вы чуствуете себя богом этого мира, зомби для вас это просто ходячая пиньята? Тогда наша корпорация №@$#, готова предоставить вам особые услуги, и за определённую ценну мы переместим модифицированный блоб в ваше измерение. Вы согласны?",
+    "category": "rebalance",
+    "dependencies": [ "dda" ]
+  },
+  {
+    "type": "monster_adjustment",
+    "species": "ZOMBIE",
+    "stat": { "name": "speed", "modifier": 2.0 }
+  },
+  {
+    "type": "monster_adjustment",
+    "species": "ZOMBIE",
+    "stat": { "name": "melee_skill", "modifier": 1.2 }
+  },
+  {
+    "type": "monster_adjustment",
+    "species": "ZOMBIE",
+    "stat": { "name": "hp", "modifier": 2.0 }
+  }
+]
