@@ -1,0 +1,19 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "no_menstrual_pad",
+    "name": "no menstrual pad",
+    "authors": [ "Kenshut" ],
+    "description": "just delete menstrual pad.",
+    "category": "item_exclude",
+    "dependencies": [ "dda" ]
+  },
+  {
+    "type": "ITEM_BLACKLIST",
+    "whitelist": false,
+    "items": [
+      "menstrual_pad",
+	  "menstrual_cup"
+    ]
+  }
+]
