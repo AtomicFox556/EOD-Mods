@@ -1,0 +1,216 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "judo_greatsword",
+    "name": "Glorious judo greatsword",
+    "authors": [ "Kenshut" ],
+    "description": "Glorious judo greatsword.",
+    "category": "misc_additions",
+    "dependencies": [ "dda" ]
+  },
+  {
+    "id": "manual_judo_greatsword",
+    "copy-from": "book_martial",
+    "type": "BOOK",
+    "name": {
+      "str": "Glorious judo greatsword",
+      "str_pl": "copies of Glorious judo greatsword"
+    },
+    "price": 11000,
+    "price_postapoc": 3000,
+    "description": "There seems to be a great power hidden in these crazy notes.",
+    "martial_art": "judo_greatsword"
+  },
+  {
+    "type": "martial_art",
+    "id": "judo_greatsword",
+    "name": { "str": "Glorious judo greatsword" },
+    "description": "A long-forgotten technique, straight from the Exanima arenas",
+    "initiate": [
+      "You feel that you can now defeat sir alone.",
+      "%s assumes into a judo greatsword stance."
+    ],
+    "learn_difficulty": 10,
+    "primary_skill": "cutting",
+    "strictly_melee": true,
+	"static_buffs": [
+      {
+        "id": "Inept",
+        "name": "Inept",
+        "description": "",
+		"skill_requirements": [ { "name": "melee", "level": 1 } ],
+        "melee_allowed": true,
+        "flat_bonuses": [
+          { "stat": "block", "scaling-stat": "str", "scale": 0.1 }
+        ]
+      },
+	  {
+        "id": "Aspirant",
+        "name": "Aspirant",
+        "description": "",
+		"skill_requirements": [ { "name": "melee", "level": 2 } ],
+        "melee_allowed": true,
+        "flat_bonuses": [
+          { "stat": "block", "scaling-stat": "str", "scale": 0.2 }
+        ]
+      },
+	  {
+        "id": "Novice",
+        "name": "Novice",
+        "description": "",
+		"skill_requirements": [ { "name": "melee", "level": 4 } ],
+        "melee_allowed": true,
+        "flat_bonuses": [
+          { "stat": "block", "scaling-stat": "str", "scale": 0.3 },
+		  { "stat": "block_effectiveness", "scale": 1 }
+        ]
+      },
+	  {
+        "id": "Adept",
+        "name": "Adept",
+        "description": "",
+		"skill_requirements": [ { "name": "melee", "level": 6 } ],
+        "melee_allowed": true,
+		"bonus_dodges": 1,
+        "bonus_blocks": 1,
+        "flat_bonuses": [
+          { "stat": "block", "scaling-stat": "str", "scale": 1 },
+          { "stat": "dodge", "scale": 1 }, 
+		  { "stat": "block_effectiveness", "scale": 1 }
+        ]
+      },
+	  {
+        "id": "Expert",
+        "name": "Expert",
+        "description": "",
+		"skill_requirements": [ { "name": "melee", "level": 8 } ],
+        "melee_allowed": true,
+		"bonus_dodges": 1,
+        "bonus_blocks": 1,
+        "flat_bonuses": [
+          { "stat": "block", "scaling-stat": "str", "scale": 1 },
+          { "stat": "dodge", "scale": 1 }, 
+		  { "stat": "block_effectiveness", "scale": 1 }
+        ]
+      },
+	  {
+        "id": "Master",
+        "name": "Master",
+        "description": "",
+		"skill_requirements": [ { "name": "melee", "level": 10 } ],
+        "melee_allowed": true,
+		"bonus_dodges": 1,
+        "bonus_blocks": 1,
+        "flat_bonuses": [
+          { "stat": "block", "scaling-stat": "str", "scale": 1 },
+          { "stat": "dodge", "scale": 1 }, 
+		  { "stat": "block_effectiveness", "scale": 1 }
+        ]
+      }
+    ],
+	"onpause_buffs": [
+      {
+        "id": "buff_judo_greatsword_onpause",
+        "name": "Preparation",
+        "description": "You prepare for the final crushing strike.",
+        "skill_requirements": [ { "name": "melee", "level": 4 } ],
+        "melee_allowed": true,
+        "bonus_blocks": 1,
+		"max_stacks": 2,
+        "buff_duration": 2
+      }
+    ],
+	"onkill_buffs": [
+	{
+        "id": "buff_judo_greatsword_onkill",
+        "name": "Rage",
+        "description": "All cutting damage dealt is multiplied by (20% of str)*(damage).\nMax stacks 3",
+        "skill_requirements": [ { "name": "melee", "level": 3 } ],
+        "melee_allowed": true,
+        "max_stacks": 3,
+        "mult_bonuses": [ { "stat": "damage", "type": "cut", "scaling-stat": "str", "scale": 0.2 } ],
+        "buff_duration": 5
+    }
+	],
+	"onblock_buffs": [
+      {
+        "id": "buff_judo_greatsword_onblock",
+        "name": "readiness",
+        "description": "All cutting damage dealt is multiplied by (10% of str)*(damage).\nMax stacks 2",
+        "skill_requirements": [ { "name": "melee", "level": 1 } ],
+        "melee_allowed": true,
+        "max_stacks": 2,
+        "mult_bonuses": [ { "stat": "damage", "type": "cut", "scaling-stat": "str", "scale": 0.1 } ],
+        "buff_duration": 2
+      }
+    ],
+    "techniques": [
+      "бросок","яростное_рассечение","tec_judo_greatsword_break_melee"
+    ],
+    "weapon_category": ["GREAT_SWORDS", "GREAT_HAMMERS", "GREAT_AXES"]
+  },
+  {
+    "id": "exotic_books",
+    "type": "item_group",
+	"copy-from": "exotic_books",
+    "//": "These are books that are hard to find or esoteric, mostly.",
+    "subtype": "distribution",
+	"extend": {
+    "entries": [
+      { "item": "manual_judo_greatsword", "prob": 1 }
+    ]
+  }
+  },
+  {
+    "id": "rare_martial_arts_books",
+	"copy-from": "rare_martial_arts_books",
+    "type": "item_group",
+    "//": "These are exceptionally rare martial arts books that should only spawn very rarely.",
+    "subtype": "distribution",
+	"extend": {
+    "entries": [
+      { "item": "manual_judo_greatsword", "prob": 1 }
+    ]
+  }
+  },
+  {
+    "type": "technique",
+    "id": "бросок",
+    "name": "Grab and Throw",
+    "messages": [ "You grab and throw %s", "<npcname> grabs and throws %s" ],
+    "skill_requirements": [ { "name": "melee", "level": 5 } ],
+    "weighting": 500,
+	"melee_allowed": true,
+    "down_dur": 2,
+	"required_buffs_all": [ "buff_judo_greatsword_onpause","buff_judo_greatsword_onblock" ],
+    "knockback_dist": 5,
+    "knockback_spread": 4,
+    "mult_bonuses": [ { "stat": "damage", "type": "bash", "scale": 5.0 },{ "stat": "movecost", "scale": 0.5 } ],
+    "attack_vectors": [ "THROW" ]
+  },
+  {
+    "type": "technique",
+    "id": "tec_judo_greatsword_break_melee",
+    "name": "Grab Break",
+    "messages": [ "The %s tries to grab you, but you force yourself free!", "The %s tries to grab <npcname>, but they break free!" ],
+    "skill_requirements": [ { "name": "melee", "level": 5 } ],
+    "melee_allowed": true,
+    "defensive": true,
+    "grab_break": true
+  },
+  {
+    "type": "technique",
+    "id": "яростное_рассечение",
+    "name": "furious cut",
+    "messages": [ "You furious cut %s", "<npcname> furious cut %s" ],
+    "skill_requirements": [ { "name": "melee", "level": 3 } ],
+    "weighting": 2,
+	"melee_allowed": true,
+    "crit_tec": true,
+	"required_buffs_all": [ "buff_judo_greatsword_onkill" ],
+    "stun_dur": 1,
+	"miss_recovery": true,
+    "mult_bonuses": [ { "stat": "damage", "type": "cut", "scale": 2.0 },{ "stat": "movecost", "scale": 0.5 } ],
+    "attack_vectors": [ "WEAPON" ]
+  }
+]
