@@ -1,0 +1,11 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "flintlocks2",
+    "name": "flintlocks+",
+    "authors": [ "Aether" ],
+    "description": "Rebalance and addds new flintlock weapons",
+    "category": "content",
+    "dependencies": [ "dda" ]
+  }
+]

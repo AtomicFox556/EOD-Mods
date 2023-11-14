@@ -1,0 +1,40 @@
+[
+{
+    "type": "item_group",
+    "id": "guns_pistol_rare_display",
+    "copy-from": "guns_pistol_rare_display",
+    "extend": { "items": [ { "item": "revolver_flintlock", "prob": 80, "charges-min": 0, "charges-max": 6 } ] }
+  },
+  
+  {
+    "type": "item_group",
+    "id": "guns_pistol_improvised",
+    "copy-from": "guns_pistol_improvised",
+    "extend": { "items": [ { "item": "revolver_flintlock", "prob": 80, "charges-min": 0, "charges-max": 6 } ] }
+  },
+  {
+    "type": "item_group",
+    "id": "guns_pistol_obscure",
+    "copy-from": "guns_pistol_obscure",
+    "extend": { "items": [ { "item": "revolver_flintlock", "prob": 80, "charges-min": 0, "charges-max": 6 } ] }
+  },
+   {
+    "type": "item_group",
+    "id": "guns_rifle_obscure",
+    "copy-from": "guns_rifle_obscure",
+    "extend": { "items": [{ "item": "blunderbuss_double_barrel", "prob": 100, "charges-min": 0, "charges-max": 2},
+    { "item": "dreyse_needle_gun", "prob": 100, "charges-min": 0, "charges-max": 1 },
+    { "item": "revolver_rifle_flintlock", "prob": 80, "charges-min": 0, "charges-max": 6 } ]
+    }
+  },
+  {
+    "type": "item_group",
+    "id": "guns_rifle_rare_display",
+    "copy-from": "guns_rifle_rare_display",
+    "extend": { "items": [{ "item": "blunderbuss_double_barrel", "prob": 150, "charges-min": 0, "charges-max": 2},
+    { "item": "dreyse_needle_gun", "prob": 100, "charges-min": 0, "charges-max": 1 },
+    { "item": "revolver_rifle_flintlock", "prob": 80, "charges-min": 0, "charges-max": 6 } ]
+    }
+  }
+ 
+  ]
