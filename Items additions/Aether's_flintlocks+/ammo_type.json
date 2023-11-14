@@ -1,0 +1,8 @@
+[
+{
+  "type": "ammunition_type",
+  "id": "dng",
+  "name": "Dreyse needle gun ammo",
+  "default": "dreyse_needle_gun_ammo"
+}
+]
