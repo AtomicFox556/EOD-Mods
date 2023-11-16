@@ -1,0 +1,52 @@
+ {
+  "id": "flintlock_pouch",
+  "type": "ARMOR",
+  "name": {
+    "str": "paper cartridge pouch",
+    "str_pl": "paper cartridge pouches"
+  },
+  "description": "A covered leather pouch, worn at the waist to store and protect prepared blackpowder cartridges.",
+  "weight": "160 g",
+  "volume": "500 ml",
+  "price": 4900,
+  "price_postapoc": 1000,
+  "material": [
+    "leather"
+  ],
+  "symbol": "[",
+  "looks_like": "ammo_pouch",
+  "color": "dark_gray",
+  "material_thickness": 1,
+  "pocket_data": [
+    {
+      "ammo_restriction": {
+        "flintlock": 14,
+        "36paper": 14,
+        "44paper": 14,
+        "blunderbuss": 14,
+        "shotpaper": 14,
+        "dng": 14
+      },
+      "moves": 20,
+      "volume_encumber_modifier": 0.3
+    }
+  ],
+  "flags": [
+    "WATER_FRIENDLY",
+    "BELTED",
+    "PALS_LARGE",
+    "OVERSIZE"
+  ],
+  "armor": [
+    {
+      "encumbrance": 2,
+      "coverage": 100,
+      "covers": [
+        "torso"
+      ],
+      "specifically_covers": [
+        "torso_waist"
+      ]
+    }
+  ]
+}
